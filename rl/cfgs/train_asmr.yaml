@@ -1,0 +1,47 @@
+defaults:
+- env: knee_env
+- model: asmr_networks 
+
+project_name: asmr_example
+env_version: Asmr_Env
+num_steps: 72
+num_envs: 128 
+update_epochs: 2 
+num_minibatches: 36 
+ppo_batch_size: ???
+use_amp: False 
+total_timesteps: 100000000 
+gamma: 0.99
+gae_lambda: 0.95
+clip_coef: 0.2
+clip_vloss: True 
+norm_adv: True
+ent_coef: 0.01 
+vf_coef: 0.5
+max_grad_norm: 0.5
+target_kl: null
+
+
+log_interval: 5
+eval_interval: 20
+seed: 666
+#k_fraction: 0.1
+budget: 40
+weight_decay: 0.01
+device: cuda 
+
+optim:
+  name: adamw
+  lr: 0.0001
+  weight_decay: 0.0001
+  momentum: 0.9
+
+snapshot_dir: ???
+load_from_snapshot_base_dir: None
+
+logging:
+  level: DEBUG
+
+hydra:
+  run:
+    dir: ./exp_local/${env.dataset}/${env.envname}/v${env_version}_s${seed}/${now:%Y.%m.%d}/${now:%H%M%S}_${project_name}

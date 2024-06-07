@@ -1,0 +1,36 @@
+# This file contains the configuration for the brain environment.
+envname: brain_env
+multilabel: True
+task: classification
+combine_class_recon_splits: False 
+ignore_kspace: False
+ignore_image: True
+dev_mode: False 
+val_shuffle: False
+num_workers: 3
+image_shape: [384, 384]
+kspace_shape: [768, 400]
+sampled_indices: [40, 359]
+in_channels: 1
+num_labels: 4
+num_classes: 2
+label_names: Edema,Enlarged ventricles,Mass,Abnormal
+coil_type: sc
+dataset: brain
+datadir: <your_data_dir>
+split_csv_file: <your_brain_data_with_datasplit_file.csv>
+scale_reward: True
+delay_step: 7
+reward_mode: 10 
+penalty_factor: -1
+train_fixed_budget: False 
+eval_fixed_budget: True
+srange: [5,51]   # training budget range
+batch_size: ???
+val_batch_size: 32 
+test_batch_size: 32
+observation_space: [1, 768, 400]
+use_weighted_sampler: True 
+train_sampler_filename: <your_brain_train_sampler.p>
+reward_model_ckpt: <your_brain_rm.ckpt>
+

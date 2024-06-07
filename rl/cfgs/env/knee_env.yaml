@@ -1,0 +1,38 @@
+# This is the configuration file for the knee environment.
+envname: knee_env
+multilabel: True
+task: classification
+combine_class_recon_splits: True 
+ignore_kspace: False
+ignore_image: False
+dev_mode: False 
+val_shuffle: False
+num_workers: 3
+image_shape: [320, 320]
+kspace_shape: [640, 400]
+sampled_indices: [33, 367]
+in_channels: 1
+num_labels: 3
+num_classes: 2
+label_names: acl,mtear,abnormal
+coil_type: sc
+dataset: knee
+datadir: <your_data_dir>
+split_csv_file: <your_brain_data_with_datasplit_file.csv>
+scale_reward: True
+reward_mode: 10
+penalty_factor: -1
+delay_step: 7
+parallel_init: True
+srange: [5,51]
+train_fixed_budget: False 
+eval_fixed_budget: True
+batch_size: ???
+val_batch_size: 32 
+test_batch_size: 32
+observation_space: [1, 640, 400] 
+use_weighted_sampler: True 
+train_sampler_filename: <your_train_sampler.p>
+reward_model_ckpt: <your_knee_rm.ckpt>
+
+

@@ -1,0 +1,24 @@
+defaults:
+- env: knee_env 
+- model: asmr_networks 
+
+env_version: Asmr_Env
+project_name: asmr_example
+seed: 1
+eval_data: test
+device: cuda 
+
+
+# directory of policy model checkpoint
+load_from_snapshot_base_dir: <your_policy_model_directory/>
+
+# Set the budget (number of lines) to be evaluated
+eval_range: [20,20]
+
+
+logging:
+  level: DEBUG
+
+hydra:
+  run:
+    dir: ./exp_local/${env.dataset}/${env_version}_${seed}/${now:%Y.%m.%d}/${now:%H%M%S}_${project_name}

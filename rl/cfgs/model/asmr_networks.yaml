@@ -1,0 +1,18 @@
+# defaults:
+# - env
+_target_: rl.ppo_core.KspaceMaskedActorCritic_MT
+action_space: ???
+observation_space: dummy
+dataset: ${env.dataset}
+image_shape: ${env.image_shape}
+dropout: 0.0
+dropout_extra: False
+pretrained: imagenet 
+model_type: resnet18_lv2 
+model_type_critic: resnet18_lv2 
+using_init: True 
+feature_dim: 60 
+mt_shape: [60]
+  
+  
+
