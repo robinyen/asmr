@@ -1,5 +1,5 @@
 # Adaptive Sampling of k-space in Magnetic Resonance for Rapid Pathology Prediction
-
+This repository offers the Adaptive Sampling of k-space in Magnetic Resonance for Rapid Pathology Prediction (ASMR), introduced in [[ICML24 Paper]](https://arxiv.org/abs/2406.04318). [[Citation]](#citation)
 
 
 ## Installation
@@ -62,5 +62,17 @@ cd rl
 python eval_asmr.py  load_from_snapshot_base_dir=<policy-checkpoint-directory>  eval_range=[<start>,<end>]
 ```
 
-
+## Citation
+ 
+If you use this repo in you research, please cite the paper as follows
+```
+@misc{yen2024adaptive,
+      title={Adaptive Sampling of k-Space in Magnetic Resonance for Rapid Pathology Prediction}, 
+      author={Chen-Yu Yen and Raghav Singhal and Umang Sharma and Rajesh Ranganath and Sumit Chopra and Lerrel Pinto},
+      year={2024},
+      eprint={2406.04318},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
 
